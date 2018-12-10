@@ -1,4 +1,5 @@
 <div class="mt-4">
+    <div class="container">  
       <h2>Brastlewark</h2>
       <table class="table table-hover m-3">
           <thead>
@@ -18,7 +19,7 @@
             <tr *ngFor="let d of mainData | paginate: { itemsPerPage: 10, currentPage: p }">
               <th scope="row">{{ d.id }}</th>
               <td>{{ d.name }}</td>
-              <td width="300px" class="text-center"><img src="{{d.thumbnail}}" alt="Image" class="rounded-circle img-fluid" width="25%"></td>
+              <td width="300px" class="text-center"><img src="{{d.thumbnail}}" alt="Image" class="rounded-circle img-fluid"></td>
               <td>{{ d.age }}</td>   
               <td>{{ d.weight }}</td>
               <td>{{ d.height }}</td>
@@ -31,5 +32,6 @@
       <div class="col-md-12">
           <pagination-controls class="d-flex justify-content-center" (pageChange)="p = $event"></pagination-controls>
       </div>
+    </div>
 </div>
 

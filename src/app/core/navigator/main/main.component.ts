@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbPaginationConfig } from '@ng-bootstrap/ng-bootstrap';
 
-import { MainService } from './main.service';
+import { MainService } from './services/main.service';
 import { MainData } from './mainData.model';
 
 @Component({
@@ -25,10 +25,6 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-   /* this.service.getGnomeInfo().subscribe((res) => {
-      this.gnomeInfo = res['Brastlewark'];
-    });
-    console.log(this.gnomeInfo);*/
     this.showData();
   }
 
@@ -36,7 +32,6 @@ export class MainComponent implements OnInit {
     this.service.getData().subscribe( data => {
       this.mainData = data[this.gnomeCity];
     });
-    console.log(this.mainData);
   }
 
 }
