@@ -1,0 +1,35 @@
+<div class="mt-4">
+      <h2>Brastlewark</h2>
+      <table class="table table-hover m-3">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th >Name</th>
+              <th>Foto</th>
+              <th>Age</th>
+              <th>Weight</th>
+              <th>Height</th>
+              <th>Air Color</th>
+              <th>Professions</th>
+              <th>Friends</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let d of mainData | paginate: { itemsPerPage: 10, currentPage: p }">
+              <th scope="row">{{ d.id }}</th>
+              <td>{{ d.name }}</td>
+              <td width="300px" class="text-center"><img src="{{d.thumbnail}}" alt="Image" class="rounded-circle img-fluid" width="25%"></td>
+              <td>{{ d.age }}</td>   
+              <td>{{ d.weight }}</td>
+              <td>{{ d.height }}</td>
+              <td>{{ d.hair_color }}</td>
+              <td>{{ d.professions }}</td>
+              <td>{{ d.friends }}</td>
+            </tr>
+          </tbody>
+      </table>
+      <div class="col-md-12">
+          <pagination-controls class="d-flex justify-content-center" (pageChange)="p = $event"></pagination-controls>
+      </div>
+</div>
+
